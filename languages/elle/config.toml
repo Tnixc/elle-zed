@@ -1,0 +1,4 @@
+name = "Elle Syntax Highlight"
+grammar = "rust"
+path_suffixes = ["le"]
+line_comments = ["//"]

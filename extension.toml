@@ -1,0 +1,11 @@
+id = "elle-zed"
+name = "Elle Syntax Highlight"
+version = "0.0.3"
+schema_version = 1
+authors = ["tnixc <tnixxc@gmail.com>"]
+description = "Syntax Highlight for Elle"
+repository = "https://github.com/algebnaly/xdr.zed.git"
+
+[grammars.rust]
+repository = "https://github.com/tree-sitter/tree-sitter-rust"
+rev = "3691201b01cacb2f96ffca4c632c4e938bfacd88"
