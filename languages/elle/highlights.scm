@@ -46,7 +46,9 @@
 
 ; Keywords
 "pub" @keyword
+"!pub" @keyword
 "local" @keyword
+"!local" @keyword
 "fn" @keyword
 "if" @keyword
 "else" @keyword
@@ -79,6 +81,13 @@
 (call_expression function: (member_expression property: (identifier) @function))
 (call_expression function: (exact_literal) @function)
 
+
+; Directives and sigils
+(directive_expression name: _ @embedded)
+
+(sigil_expression (identifier) @function)
+
+; last item of qualified_identifier
 (qualified_identifier name: (identifier) @function)
 
 ; Parameters
@@ -134,12 +143,6 @@
   ":="
 ] @operator
 
-; Directives and sigils
-
-(directive_expression (identifier) @function)
-
-(sigil_expression (identifier) @function)
-
 ; Punctuation
 [
   "("
@@ -161,8 +164,10 @@
 
 [
   "$"
+  "#"
   "::"
   ";"
+  "->"
 ] @punctuation
 
 ; Import statements
