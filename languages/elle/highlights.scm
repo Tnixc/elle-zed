@@ -52,8 +52,6 @@
 ; Keywords
 "pub" @keyword
 "!pub" @keyword
-"local" @keyword
-"!local" @keyword
 "fn" @keyword
 "if" @keyword
 "else" @keyword
