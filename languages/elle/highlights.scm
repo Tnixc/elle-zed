@@ -2,13 +2,17 @@
 (identifier) @variable
 (qualified_identifier) @variable
 
-; ; Assume uppercase names are enum constructors
+; Assume uppercase names are structs
 ((identifier) @constructor
   (#match? @constructor "^[A-Z]"))
 
 ; Assume all-caps names are constants
 ((identifier) @constant
   (#match? @constant "^[A-Z][A-Z\\d_]+$"))
+
+; If the regex doesn't match, at least it's right once
+(struct_definition (identifier) @constructor)
+(constant_definition (identifier) @constant)
 
 ; Types
 (type) @type
@@ -85,7 +89,7 @@
 ; Directives and sigils
 (directive_expression name: _ @embedded)
 
-(sigil_expression (identifier) @function)
+(sigil_expression (identifier) @embedded)
 
 ; last item of qualified_identifier
 (qualified_identifier name: (identifier) @function)
@@ -158,6 +162,7 @@
 [
   ","
   "."
+  "::"
 ] @punctuation.delimiter
 
 "..." @punctuation.special
@@ -165,11 +170,12 @@
 [
   "$"
   "#"
-  "::"
   ";"
   "->"
+  "@"
 ] @punctuation
 
 ; Import statements
 (import_statement (module_path) @primary)
 
+(import_statement (module_path "/" @punctuation.delimiter))
