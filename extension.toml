@@ -8,4 +8,4 @@ repository = "https://github.com/algebnaly/xdr.zed.git"
 
 [grammars.elle]
 repository = "https://github.com/Tnixc/tree-sitter-elle"
-rev = "6e6f1db3404ae77575dcf2cda4d0a38bf644a1f3"
+rev = "d313c83cd658d05741062d482d7bec07c2ea8c34"

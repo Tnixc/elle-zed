@@ -145,6 +145,12 @@
   "*="
   "/="
   "<>="
+  "%="
+  "^="
+  "|="
+  "&="
+  ">>="
+  "<<="
   ":="
 ] @operator
 
@@ -181,3 +187,4 @@
 ; tuples and triples
 (tuple_literal "$" @constructor)
 (triple_literal "$$" @constructor)
+
