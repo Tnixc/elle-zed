@@ -1,8 +1,6 @@
 ; Identifiers
-(identifier)
-@variable
-(qualified_identifier)
-@variable
+(identifier) @variable
+(qualified_identifier) @variable
 
 ; ; Assume uppercase names are enum constructors
 ((identifier) @constructor
@@ -13,98 +11,56 @@
   (#match? @constant "^[A-Z][A-Z\\d_]+$"))
 
 ; Types
-(type)
-@type
-(array_type)
-@type
-(pointer_type)
-@type
-(generic_type)
-@type
-(tuple_type)
-@type
+(type) @type
+(array_type) @type
+(pointer_type) @type
+(generic_type) @type
+(tuple_type) @type
 
 (generic_parameters (identifier) @type)
 
 ; Constants and literals
-(numeric_literal)
-@number
-(string_literal)
-@string
-(character_literal)
-@string
-(boolean_literal)
-@boolean
-(escape_sequence)
-@string.escape
+(numeric_literal) @number
+(string_literal) @string
+(character_literal) @string
+(boolean_literal) @boolean
+(escape_sequence) @string.escape
 
 ; Comments
-(comment)
-@comment
+(comment) @comment
 
 ; Keywords
-"pub"
-@keyword
-"local"
-@keyword
-"fn"
-@keyword
-"if"
-@keyword
-"else"
-@keyword
-"while"
-@keyword
-"for"
-@keyword
-"in"
-@keyword
-"defer"
-@keyword
-"return"
-@keyword
-"break"
-@keyword
-"continue"
-@keyword
-"struct"
-@keyword
-"const"
-@keyword
-"external"
-@keyword
-"use"
-@keyword
-"namespace"
-@keyword
-"global"
-@keyword
-"let"
-@keyword
-"void"
-@type
-"bool"
-@type
-"char"
-@type
-"i8"
-@type
-"i16"
-@type
-"i32"
-@type
-"i64"
-@type
-"f32"
-@type
-"f64"
-@type
-"string"
-@type
-"any"
-@type
-"FILE"
-@type
+"pub" @keyword
+"local" @keyword
+"fn" @keyword
+"if" @keyword
+"else" @keyword
+"while" @keyword
+"for" @keyword
+"in" @keyword
+"defer" @keyword
+"return" @keyword
+"break" @keyword
+"continue" @keyword
+"struct" @keyword
+"const" @keyword
+"external" @keyword
+"use" @keyword
+"namespace" @keyword
+"global" @keyword
+"let" @keyword
+"void" @type
+"bool" @type
+"char" @type
+"i8" @type
+"i16" @type
+"i32" @type
+"i64" @type
+"f32" @type
+"f64" @type
+"string" @type
+"any" @type
+"FILE" @type
 
 ; Function definition
 (function_definition name: (identifier) @function)
@@ -161,8 +117,8 @@
   "!"
   "~"
   "?"
-  ":"]
-@operator
+  ":"
+] @operator
 
 ; Assignment operators
 [
@@ -172,8 +128,8 @@
   "*="
   "/="
   "<>="
-  ":="]
-@operator
+  ":="
+] @operator
 
 ; Directives and sigils
 
@@ -186,25 +142,24 @@
   "{"
   "}"
   "<"
-  ">"]
-@punctuation.bracket
+  ">"
+] @punctuation.bracket
 
 [
   ","
-  "."]
-@punctuation.delimiter
+  "."
+] @punctuation.delimiter
 
-"..."
-@punctuation.special
+"..." @punctuation.special
 
 [
   "$"
   "::"
-  ";"]
-@punctuation
+  ";"
+] @punctuation
 
 ; Import statements
-(import_statement (module_path) @module)
+(import_statement (module_path) @primary)
 
 (directive_expression (identifier) @function)
 
