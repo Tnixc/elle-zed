@@ -156,8 +156,6 @@
   "]"
   "{"
   "}"
-  "<"
-  ">"
 ] @punctuation.bracket
 
 [
