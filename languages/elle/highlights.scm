@@ -109,6 +109,7 @@
 ; Attributes
 (attribute (identifier) @attribute)
 
+
 ; Operators
 [
   "+"
@@ -168,7 +169,6 @@
 "..." @punctuation.special
 
 [
-  "$"
   "#"
   ";"
   "->"
@@ -179,3 +179,7 @@
 (import_statement (module_path) @primary)
 
 (import_statement (module_path "/" @punctuation.delimiter))
+
+; tuples and triples
+(tuple_literal "$" @constructor)
+(triple_literal "$$" @constructor)
