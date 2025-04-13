@@ -12,12 +12,27 @@
 
 ; Types
 (type) @type
+(type (identifier) @type)
 (array_type) @type
 (pointer_type) @type
-(generic_type) @type
 (tuple_type) @type
 
+(generic_type) @type
 (generic_parameters (identifier) @type)
+
+"ElleMeta" @type
+"void" @type
+"bool" @type
+"char" @type
+"i8" @type
+"i16" @type
+"i32" @type
+"i64" @type
+"f32" @type
+"f64" @type
+"string" @type
+"any" @type
+"FILE" @type
 
 ; Constants and literals
 (numeric_literal) @number
@@ -49,18 +64,6 @@
 "namespace" @keyword
 "global" @keyword
 "let" @keyword
-"void" @type
-"bool" @type
-"char" @type
-"i8" @type
-"i16" @type
-"i32" @type
-"i64" @type
-"f32" @type
-"f64" @type
-"string" @type
-"any" @type
-"FILE" @type
 
 ; Function definition
 (function_definition name: (identifier) @function)
@@ -133,6 +136,10 @@
 
 ; Directives and sigils
 
+(directive_expression (identifier) @function)
+
+(sigil_expression (identifier) @function)
+
 ; Punctuation
 [
   "("
@@ -161,6 +168,3 @@
 ; Import statements
 (import_statement (module_path) @primary)
 
-(directive_expression (identifier) @function)
-
-(sigil_expression (identifier) @function)
