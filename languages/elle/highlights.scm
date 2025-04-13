@@ -24,6 +24,7 @@
 (generic_type) @type
 (generic_parameters (identifier) @type)
 
+; hmm for primitives, @type or @keyword?
 "ElleMeta" @type
 "void" @type
 "bool" @type
@@ -90,6 +91,7 @@
 (directive_expression name: _ @embedded)
 
 (sigil_expression (identifier) @embedded)
+(sigil_expression "$" @punctuation)
 
 ; last item of qualified_identifier
 (qualified_identifier name: (identifier) @function)
